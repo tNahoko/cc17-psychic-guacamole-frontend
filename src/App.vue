@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <h1 class="app-title">Notes app</h1>
+    <h1 class="header">Notes App</h1>
     <div class="main-body">
-      <Sidebar />
+      <Sidebar v-bind:notes="notes" />
       <NoteSpace />
     </div>
   </div>
@@ -11,12 +11,37 @@
 <script>
 import Sidebar from './components/Sidebar.vue'
 import NoteSpace from './components/NoteSpace.vue'
+import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
     Sidebar,
     NoteSpace
+  },
+  data() {
+    return {
+      notes: []
+    }
+  },
+  methods: {
+    showNote: async function () {
+
+    },
+    addNote: async function () {
+
+    },
+    deleteNote: async function () {
+
+    }
+  },
+  async created() {
+    try {
+      const response = await axios.get('https://pg-note-backend.herokuapp.com/api/notes');
+      this.notes = response.data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 </script>

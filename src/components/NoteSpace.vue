@@ -17,6 +17,5 @@ export default {
 <style scoped>
 .note-space {
   float: right;
-  margin: 0 0 0 180px;
 }
 </style>

@@ -1,16 +1,8 @@
 <template>
-  <div class="sidebar">
-      <div class="note-card">
-          <h2 class="note-id">Note 1</h2>
-          <p class="text-preview">Text1...</p>
-      </div>
-      <div class="note-card">
-          <h2 class="note-id">Note 2</h2>
-          <p class="text-preview">Text2...</p>
-      </div>
-      <div class="note-card">
-          <h2 class="note-id">Note 3</h2>
-          <p class="text-preview">Text3...</p>
+  <div class="sidebar" >
+      <div class="note-card" v-for="(note, index) in notes" v-bind:key="index" >
+          <label class="note-id"> {{note.id}} </label>
+          <p class="text-preview"> {{note.text}} </p>
       </div>
   </div>
 </template>
@@ -18,8 +10,7 @@
 <script>
 export default {
   name: 'SideBar',
-  props: {
-  }
+  props: ['notes']
 }
 </script>
 
@@ -27,6 +18,6 @@ export default {
 <style scoped>
 .sidebar {
   float: left;
-  margin: 0 0 0 180px;
+  margin: 0 0 0 100px;
 }
 </style>
