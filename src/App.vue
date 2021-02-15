@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="app-title">Notes app</h1>
+    <div class="main-body">
+      <Sidebar />
+      <NoteSpace />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue'
+import NoteSpace from './components/NoteSpace.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Sidebar,
+    NoteSpace
   }
 }
 </script>
@@ -24,5 +29,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.main-body {
+  display: flex;
 }
 </style>
